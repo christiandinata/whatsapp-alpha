@@ -24,7 +24,7 @@ function Sidebar() {
 
 	const createChat = () => {
 		const input = prompt(
-			"Please enter an email address for the user you wish to chat with"
+			"Please enter an email address of the user you wish to chat with"
 		);
 
 		if (!input) return null;
