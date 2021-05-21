@@ -34,8 +34,11 @@ function SideSideBar() {
 export default SideSideBar;
 
 const Container = styled.div`
-	display: grid;
-	place-items: center;
+	display: flex;
+	flex-direction: column;
+	flex: 0.45;
+	justify-content: center;
+	align-items: center;
 	z-index: 100;
 	background-color: grey;
 	color: white;
@@ -43,6 +46,13 @@ const Container = styled.div`
 	left: ${({ avatarClicked }) => (avatarClicked ? "0" : "-100%")};
 	transition: 0.35s;
 	padding-top: 30px;
+	border-right: 1px solid whitesmoke;
+	height: 100vh;
+	width: 350px;
+
+	@media screen and (max-width: 960px) {
+		width: 300px;
+	}
 `;
 
 const UserAvatar = styled(Avatar)`

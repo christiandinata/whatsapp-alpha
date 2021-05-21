@@ -91,11 +91,9 @@ function Sidebar() {
 export default Sidebar;
 
 const Container = styled.div`
-	flex: 0.45;
 	border-right: 1px solid whitesmoke;
 	height: 100vh;
-	min-width: 300px;
-	max-width: 350px;
+	width: 350px;
 	overflow: scroll;
 
 	::-webkit-scrollbar {
@@ -104,6 +102,10 @@ const Container = styled.div`
 
 	--ms-overflow-style: none; // Internet Explorer and Edge
 	scrollbar-width: none; // Firefox
+
+	@media screen and (max-width: 960px) {
+		width: 300px;
+	}
 `;
 
 const Header = styled.div`

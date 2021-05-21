@@ -92,7 +92,7 @@ function ChatScreen({ chat, messages }) {
 					<h3>{getRecipientEmail(chat.users, user)}</h3>
 					{recipientSnapshot ? (
 						<p>
-							Last active:{""}
+							Last active:{" "}
 							{recipient?.lastSeen?.toDate() ? (
 								<TimeAgo
 									datetime={recipient?.lastSeen?.toDate()}
