@@ -58,17 +58,22 @@ function ChatScreen({ chat, messages }) {
 
 	const sendMessage = (e) => {
 		e.preventDefault();
-		db.collection("users").doc(user.uid).set({
-			lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
-		}),
-			{ merge: true };
-
-		db.collection("chats").doc(router.query.id).collection("messages").add({
-			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-			user: user.email,
-			photoURL: user.photoURL,
-			message: input,
-		});
+		db.collection("users").doc(user.uid).set(
+			{
+				lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
+			},
+			{ merge: true }
+		),
+			db
+				.collection("chats")
+				.doc(router.query.id)
+				.collection("messages")
+				.add({
+					timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+					user: user.email,
+					photoURL: user.photoURL,
+					message: input,
+				});
 
 		setInput("");
 
