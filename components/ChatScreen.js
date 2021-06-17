@@ -152,7 +152,7 @@ const Header = styled.div`
 	z-index: 100;
 	top: 0;
 	display: flex;
-	padding: 11px;
+	padding: 20px;
 	height: 80px;
 	align-items: center;
 	border-bottom: 1px solid grey;
